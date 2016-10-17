@@ -13,7 +13,7 @@ namespace Labo5WeatherApp.Model
         public async Task<IEnumerable<WeatherForecast>> GetForecast()
         {
             var wc = new HttpClient();
-            var weather = await wc.GetStringAsync(new Uri("http://api.openweathermap.org/data/2.5/forecast?q=Namur,us&mode=json&appid=81590075d1b753c4baa1bd05460b525e"));
+            var weather = await wc.GetStringAsync(new Uri("http://api.openweathermap.org/data/2.5/forecast/forecast?q=Namur&lang=fr&appid=XXXXXXXXXXXXXXXXXXXXXX"));
             var rawWeather = JObject.Parse(weather);
             var forecast = rawWeather["list"].Children().Select(d => new WeatherForecast()
                 {

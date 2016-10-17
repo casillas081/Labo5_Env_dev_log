@@ -13,7 +13,7 @@ namespace Labo5WeatherApp.Converter
         public object Convert(object value, Type targetType, object parameter, string language)
         {
             var forecast = (string)value;
-            if (forecast.Contains("nuageux"))
+            if (forecast.Contains("légères pluies"))
                 return new BitmapImage(new Uri("ms-appx:/Images/nuageuse.png"));
             else
                 return new BitmapImage(new Uri("ms-appx:/Images/ensoleillee.png"));
